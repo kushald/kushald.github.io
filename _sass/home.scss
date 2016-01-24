@@ -1,9 +1,9 @@
 .home-bg {
-	background: #202020;
+	background-color: #202020 !important;
 	color: #fff;
 	background: url(../images/home-bg.jpg) no-repeat center center fixed;
 	background-size: cover;
-	height: 100vh;
+	min-height: 100vh;
 
 	h1 {
 		font-family: jaapokkisubtract-regular;
