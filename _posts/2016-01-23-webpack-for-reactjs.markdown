@@ -18,7 +18,7 @@ $npm init
 
 For this project we will be using babel and it's dependencies which help us transform ES6 files to ES5 javascript.
 
-`$npm install --save-dev babel-core babel-loader babel-runtime`
+`$npm install babel-loader babel-core babel-preset-es2015 babel-preset-react --save-dev`
 
 
 **Webpack**
@@ -41,7 +41,7 @@ We will also be using *html-webpack-plugin* which will generate HTML file for us
 
 **React**
 
-`$npm install --save-dev react`
+`$npm install --save-dev react react-dom`
 
 **Set up webpack and webpack-dev-server**
 
@@ -67,10 +67,13 @@ So the *package.json* file now looks something like this:
   "devDependencies": {
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
     "babel-runtime": "^6.3.19",
     "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.7.1",
     "react": "^0.14.6",
+    "react-dom": "^0.14.6",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
@@ -107,9 +110,16 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.css/,
-				//specify in reverse order
+				test: /\.css$/,
 				loader: 'style!' + 'css'
+			},
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+				query: {
+					presets: ['react', 'es2015']
+				}
 			}
 		]
 	},
@@ -120,14 +130,23 @@ module.exports = {
 		})
 	]
 };
+
 {% endhighlight %}
 
 - The configuration file contains an entry point. In our example it is *index.jsx*. 
-  Lets create the file `$touch index`
+  Lets create the file `$touch index.jsx`
+
+  {% highlight sh %}
+ 	import './style.css';
+	import React from 'react';
+	import ReactDom from 'react-dom';
+
+	ReactDom.render(<h1>Hello from react backed by webpack</h1>, 
+	document.body);
+  {% endhighlight %}
+
 - Next we have specified output file *bundle.js* which will be under the folder *dist*
-- *Loaders*: 
-		- It contains *test* which has a regex. In our example it specifies css files.
-		- *loader* key contains the npm module names chained specified reverse order. In our example we want to take css file and load it has style tag. The chaning is done by specifying '!' mark.
+- *Loaders*: It contains *test* which has a regex. In our example it specifies css files. The *loader* key contains the npm module names chained in reverse order. In our example we want to take css file and load it has style tag. The chaning is done by specifying '!' mark.
 - *Plugins*:
 	We are using *html-webpack-plugin* which will create HTML file for us with a title specified in config file.
 
@@ -175,7 +194,9 @@ Child html-webpack-plugin for "index.html":
 webpack: bundle is now VALID.
 {%endhighlight%}
 
-You can now open the location [http://localhost:8080](http://localhost:8080) in browser and see HTML page with our title showing up. 
+You can now open the location [http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) in browser and see HTML page with our title showing up. 
+
+[Source code](https://github.com/kushald/webpack-demo)
 
 That's it!
 
