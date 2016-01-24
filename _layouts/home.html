@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+	<div class="home-bg">
+		<div class="page-content">
+			<div class="wrapper">
+				<h1>
+					<span class="pink">CODE </span> 
+					<span>FOO </span>
+					<span class="blue">BAR </span>
+				</h1>
+				<h2>Javascript, nodejs, socket.io, reactjs, ruby on rails</h2>
+			  {{ content }}
+			  <div class="col-6">
+			  	<a href="#">About</a>
+			  </div>
+			  <div class="col-6">
+
+			  	<a href="{{site.links[1].url}}">Blog</a>
+			  </div>
+			</div>
+		</div>
+	</div>
+    {% include google_analytics.html %}
+</body>
+</html>

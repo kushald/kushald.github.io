@@ -1,0 +1,41 @@
+.home-bg {
+	background: #202020;
+	color: #fff;
+	background: url(../images/home-bg.jpg) no-repeat center center fixed;
+	background-size: cover;
+	height: 100vh;
+
+	h1 {
+		font-family: jaapokkisubtract-regular;
+    font-size: 80px;
+    text-align: center;
+    margin-top: 20%;
+
+    span.pink {
+    	color: #FF1654;
+    }
+    span.blue {
+    	color: #247BA0;
+    }
+	}
+
+	h2 {
+		font-family: jaapokki;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+	}
+
+	.col-6 {
+		text-align:center;
+
+		a {
+			color: #fff !important;
+			display: block;
+	    width: 100px;
+	    border: 1px solid;
+	    height: 28px;
+	    margin: 4px auto;
+		}
+	}
+}

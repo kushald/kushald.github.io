@@ -15,6 +15,10 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: kushz19
 github_username:  kushald
 permalink: /:categories/:title
-
+links:
+  - title: about
+    url: /about
+  - title: articles
+    url: /articles
 # Build settings
 markdown: kramdown

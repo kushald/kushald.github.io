@@ -28,7 +28,9 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-
+@font-face {
+  font-family: "jaapokkisubtract-regular";
+  src: font-files("jaapokkisubtract-regular.eot", "jaapokkisubtract-regular.svg", "jaapokkisubtract-regular.ttf", "jaapokkisubtract-regular.woff"); }
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -48,6 +50,7 @@ $on-laptop:        800px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
+        "home",
         "layout",
         "syntax-highlighting"
 ;
