@@ -30,7 +30,10 @@ $on-laptop:        800px;
 
 @font-face {
   font-family: "jaapokkisubtract-regular";
-  src: font-files("jaapokkisubtract-regular.eot", "jaapokkisubtract-regular.svg", "jaapokkisubtract-regular.ttf", "jaapokkisubtract-regular.woff"); }
+  src: url("../fonts/jaapokkisubtract-regular.eot"),
+  		 url("../fonts/jaapokkisubtract-regular.svg"), 
+  		 url("../fonts/jaapokkisubtract-regular.ttf"), 
+  		 url("../fonts/jaapokkisubtract-regular.woff"); }
 
 // Use media queries like this:
 // @include media-query($on-palm) {
