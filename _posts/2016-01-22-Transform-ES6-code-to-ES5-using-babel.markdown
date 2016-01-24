@@ -2,7 +2,7 @@
 layout: post
 title:  "Transform ES6 code to ES5 using babel"
 date:   2016-01-22 17:48:29 +0530
-categories: article
+categories: articles
 ---
 
 Prerequisites
