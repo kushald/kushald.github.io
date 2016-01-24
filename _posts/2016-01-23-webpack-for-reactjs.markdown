@@ -136,7 +136,7 @@ module.exports = {
 - The configuration file contains an entry point. In our example it is *index.jsx*. 
   Lets create the file `$touch index.jsx`
 
-  {% highlight sh %}
+  {% highlight js %}
  	import './style.css';
 	import React from 'react';
 	import ReactDom from 'react-dom';
