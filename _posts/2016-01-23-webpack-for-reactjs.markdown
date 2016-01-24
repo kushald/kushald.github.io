@@ -136,14 +136,14 @@ module.exports = {
 - The configuration file contains an entry point. In our example it is *index.jsx*. 
   Lets create the file `$touch index.jsx`
 
-  {% highlight js %}
- 	import './style.css';
-	import React from 'react';
-	import ReactDom from 'react-dom';
+{% highlight js %}
+import './style.css';
+import React from 'react';
+import ReactDom from 'react-dom';
 
-	ReactDom.render(<h1>Hello from react backed by webpack</h1>, 
-	document.body);
-  {% endhighlight %}
+ReactDom.render(<h1>Hello from react backed by webpack</h1>,
+document.body);
+{% endhighlight %}
 
 - Next we have specified output file *bundle.js* which will be under the folder *dist*
 - *Loaders*: It contains *test* which has a regex. In our example it specifies css files. The *loader* key contains the npm module names chained in reverse order. In our example we want to take css file and load it has style tag. The chaning is done by specifying '!' mark.
